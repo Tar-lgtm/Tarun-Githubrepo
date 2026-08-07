@@ -25,5 +25,5 @@ Resources:
         - !Ref WebServerSecurityGroup
       Tags:
         - Key: Name
-          Value: create manual EC2
+          Value: create automatic EC2
   
