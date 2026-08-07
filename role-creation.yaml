@@ -21,7 +21,7 @@ Resources:
       
       # 2. Managed Policies: Attaches existing AWS managed policies
       ManagedPolicyArns:
-        - 'arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess'
+        
         - 'arn:aws:iam::aws:policy/AmazonEC2FullAccess'
         
       # 3. Inline Policies: Creates custom permissions unique to this role
@@ -34,7 +34,7 @@ Resources:
                 Action:
                   - 's3:GetObject'
                   - 's3:putObject'
-                  - 's3:DeleteObject'
+                  
                   
             Resource: '*'
                 
