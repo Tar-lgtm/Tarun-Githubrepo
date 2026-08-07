@@ -5,7 +5,7 @@ Resources:
   MyEC2Role:
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: 'auto89-role'
+      RoleName: 'MyExampleEC2Role'
       Description: 'An example IAM role created via CloudFormation'
       
       # 1. Trust Policy: Determines who can assume this role
@@ -35,3 +35,7 @@ Resources:
                   - 's3:DeleteObject'
                 Resource: 'arn:aws:s3:::my-target-bucket-name/*'
 
+Outputs:
+  RoleArn:
+    Description: 'The ARN of the newly created IAM Role'
+    Value: !GetAtt MyEC2Role.Arn
