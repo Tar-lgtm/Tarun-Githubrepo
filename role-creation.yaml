@@ -5,7 +5,7 @@ Resources:
   MyS3ReadRole:
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: 'auto69-role'
+      RoleName: 'auto68-role'
       Description: 'create cicd-role'
       
       # 1. Trust Policy: Defines who can assume this role (EC2 Service)
@@ -21,7 +21,6 @@ Resources:
       
       # 2. Managed Policies: Attaches existing AWS managed policies
       ManagedPolicyArns:
-        
         - 'arn:aws:iam::aws:policy/AmazonEC2FullAccess'
         
       # 3. Inline Policies: Creates custom permissions unique to this role
@@ -35,8 +34,7 @@ Resources:
                   - 's3:GetObject'
                   - 's3:putObject'
                   
-                  
-            Resource: '*'
+            Resource: 'arn:aws:s3:::my-target-bucket-name/*'
                 
   
 
